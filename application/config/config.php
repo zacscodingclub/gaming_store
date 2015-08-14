@@ -16,7 +16,7 @@
 | environments.
 |
 */
-$config['base_url'] = 'http://www.zacbaston.com/projects/php_projects/gaming/';
+$config['base_url'] = 'http://www.zacbaston.com/projects/php_projects/gaming_store/';
 
 /*
 |--------------------------------------------------------------------------
@@ -226,7 +226,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = '12345';
 
 /*
 |--------------------------------------------------------------------------

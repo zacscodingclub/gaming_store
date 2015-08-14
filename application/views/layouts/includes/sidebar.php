@@ -6,11 +6,23 @@
                   <th>Item Description</th>
                   <th style="text-align:right">Item Price</th>
                 </tr>
-                <tr>
-                  <td></td>
-                  <td class="right"><strong>Total</strong></td>
-                  <td class="right" style="text-align:right">$</td>
-                </tr>
+                <?php $i=1; ?>
+                <?php foreach($this->cart->contents() as $items) : ?>
+                <input type="hidden" name="<?php echo $i.'[rowid]'; ?>" value="<?php echo $items['rowid']; ?>" />
+                  <tr>
+                    <td>
+                      <input type="text" name="<?php echo $i.'[qty]'; ?>" value="<?php echo $items['qty']; ?>" maxlength="3" size="5" class="qty" />
+                    </td>
+                    <td><?php echo $items['name']; ?></td>
+                    <td style="text-align-right"><?php echo $this->cart->format_number($items['price']); ?></td>
+                  </tr>
+                <?php $i++; ?>
+                <?php endforeach; ?>
+                  <tr>
+                    <td></td>
+                    <td class="right"><strong>Total</strong></td>
+                    <td class="right" style="text-align-right">$<?php echo $this->cart->format_number($this->cart->total()); ?></td>
+                  </tr>
               </table>
               <br>
               <p>
@@ -24,27 +36,16 @@
               <h3 class="panel-title">Categories</h3>
             </div>
             <ul class="list-group">
-              <a href="#" class="list-group-item active">Gaming Consoles</a>
-              <a href="#" class="list-group-item">Xbox One Games</a>
-              <a href="#" class="list-group-item">Playstation 4 Games</a>
-              <a href="#" class="list-group-item">Nintendo Wii U Games</a>
-              <a href="#" class="list-group-item">Xbox 360 Games</a>
-              <a href="#" class="list-group-item">Playstation 3 Games</a>
-              <a href="#" class="list-group-item">Nintendo Wii Games</a>
-              <a href="#" class="list-group-item">Other Console Games</a>
-            </ul>             
+              <?php foreach(get_categories_h() as $category) : ?>
+                <a href="<?php echo base_url(); ?>products/category/<?php echo $category->id; ?>" class="list-group-item"><?php echo $category->name; ?></a>
+              <?php endforeach; ?>
           </div>
           <div class="panel panel-default panel-list">
             <div class="panel-heading">
               <h3 class="panel-title">Most Popular</h3>
             </div>
             <ul class="list-group">
-              <a href="#" class="list-group-item active">Gaming Consoles</a>
-              <a href="#" class="list-group-item">Xbox One Games</a>
-              <a href="#" class="list-group-item">Playstation 4 Games</a>
-              <a href="#" class="list-group-item">Nintendo Wii U Games</a>
-              <a href="#" class="list-group-item">Xbox 360 Games</a>
-              <a href="#" class="list-group-item">Playstation 3 Games</a>
-              <a href="#" class="list-group-item">Nintendo Wii Games</a>
-              <a href="#" class="list-group-item">Other Console Games</a>
+              <?php foreach(get_popular_h() as $product) : ?>
+                <a href="<?php echo base_url(); ?>products/details/<?php echo $product->id; ?>" class="list-group-item"><?php echo $product->title; ?></a>
+              <?php endforeach; ?>
             </ul> 

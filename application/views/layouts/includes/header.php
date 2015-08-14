@@ -8,10 +8,10 @@
     <title>Gaming Store</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/css/styles.css" rel="stylesheet">
   </head>
 
   <body>
@@ -25,12 +25,12 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Gaming Store</a>
+          <a class="navbar-brand" href="<?php echo base_url(); ?>">Gaming Store</a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="register.html">Create Account</a></li>
+            <li class="active"><a href="<?php echo base_url(); ?>">Home</a></li>
+            <li><a href="<?php echo base_url(); ?>users/register">Create Account</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <div class="form-group">
