@@ -18,6 +18,7 @@
 */
 $config['base_url'] = 'http://www.zacbaston.com/projects/php_projects/gaming_store/';
 
+
 /*
 |--------------------------------------------------------------------------
 | Index File
